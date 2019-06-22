@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>MY PRE GAME</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- <script
+          src="https://code.jquery.com/jquery-3.4.1.slim.js"
+          integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+          crossorigin="anonymous">
+    </script> -->
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center">
+        <!-- <a class="navbar-brand" href="#">Moto Dragrace</a> -->
+        <h1 class="m-3 p-3">Moto Dragrace </h1>
+        <button id="start-button" class="btn btn-outline-success m-3 p-3">START GAME</button>
+        <h2><span class="badge badge-secondary m-3 p-3" id="countdown">are you ready?</span></h2> 
+      </nav>
+    </div>
+
+    <div class="container"><canvas id="dcanvas" height="600px" width="1000px"></canvas></div>
+    
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+    <!-- game classes -->
+    <script src="Chronos.js"></script>
+    <script src="Obstacle.js"></script>
+    <script src="Moto.js"></script>
+    <script src="Main.js"></script>
+  </body>
+</html>

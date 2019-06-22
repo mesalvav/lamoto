@@ -1,0 +1,11 @@
+#dcanvas {
+  background-color: royalblue;
+}
+
+#buttonPress{
+  display: block;
+}
+
+#countdown {
+  width: 200px;
+}
