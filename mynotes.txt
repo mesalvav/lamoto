@@ -1,0 +1,7 @@
+<div class="container">
+        <div class="p-3 m-3"></div>
+          <div class="progress" style="width: 20px; height: 100px; padding-top: 50px ">
+            <div class="progress-bar bg-danger" role="progressbar" style="height:100%; width:100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            
+          </div>
+      </div>

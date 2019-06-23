@@ -13,10 +13,10 @@ class Obstacle{
     this.ctx.fillRect(this.x, this.y, this.width, this.height);
   }
 
-  moveDownForever(){
+  moveLeftForever(){
       setInterval(()=>{
         this.ctx.clearRect(this.x, this.y, this.width, this.height);
-        this.y += 5;
+        this.x -= 0.6;
         this.drawItself();
       },200)
   }
