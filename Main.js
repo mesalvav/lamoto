@@ -5,7 +5,7 @@ let dDocument  = $(document).ready(function(){
   
 
    let ctx = $("#dcanvas")[0].getContext('2d');
-    ctx.save();
+  ctx.save();
 
   let stateKeyboard = new StateKeyboard();
 
@@ -13,10 +13,20 @@ let dDocument  = $(document).ready(function(){
   let moto1 = new Moto(ctx, 150);
   let moto2 = new Moto2(ctx, 450);
 
-  moto1.drawItself();
+  moto1.Player1Img.onload = () => {
+    
+    // console.log("loading image p1...... !!!");
+    moto1.drawItself();
+    
+  };
+ //  moto1.drawItself();
+  moto2.Player2Img.onload = () => {
+  console.log("loading image P2...... !!!");
+  moto2.drawItself();
+};
+
   moto2.drawItself();
   
-
   let finishLine = new FinishLine(ctx);
   finishLine.drawItself();
 
@@ -29,7 +39,7 @@ let gameStarted = false;
 
 let startButton = $('#start-button').click(function(){
   
-  if ( gameStarted) {
+  if ( gameStarted) {  // reset game
     startButton.text('Start');
     location.reload();
   } else {
@@ -41,6 +51,7 @@ let startButton = $('#start-button').click(function(){
       moto2.moveForeverXdirection();
       moto1.moveForeverXdirection();
       animate();
+      randomObstacles.movecollectionForever();
     }
 
     setTimeout( startGameWithDelay, 5000);
@@ -95,11 +106,11 @@ $(document).keydown(function(e){
     finishLine.drawItself();
     detectWinner(moto1, moto2);
 
-    // obstacle.moveLeftForever();
+     randomObstacles.movecollectionForever();
 
-    randomObstacles.collection.forEach((obstaclex) => {
-      obstaclex.moveLeftForever();
-    });
+    // randomObstacles.collection.forEach((obstaclex) => {
+    //   obstaclex.moveLeftForever();
+    // });
     
   }
 
@@ -166,11 +177,11 @@ $(document).keydown(function(e){
   }
 
   function detectWinner(moto1, moto2) {
-      if (moto1.x > finishLine.x + 5) {
+      if (moto1.x > finishLine.x) {
         alert(" player 1 is the winner");
         location.reload();
       }
-      if (moto2.x > finishLine.x + 5) {
+      if (moto2.x > finishLine.x) {
         alert(" player 2 is the winner");
         location.reload();
       }

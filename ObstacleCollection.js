@@ -15,7 +15,7 @@ class ObstacleCollection {
     }
 
     randomCollection(){
-        let numberOfObstacles = 4;
+        let numberOfObstacles = 6;
         for(let i=0; i< numberOfObstacles; i++) {
 
           let randomHeight = Math.floor(Math.random()* 570) + 20;
@@ -32,20 +32,36 @@ class ObstacleCollection {
         for(let i=0; i< numberOfObstacles; i++) {
 
           let randomHeight = Math.floor(Math.random()* 570) + 20;
-           let randomWidth = 1000 + (Math.floor(Math.random()* 2000));
+           let randomWidth = 1000 + (Math.floor(Math.random()* 6000));
 
 
-          let randomObstacle = new Obstacle(this.ctx,randomWidth, randomHeight, 40, 40);
+          let randomObstacle = new Obstacle(this.ctx,randomWidth, randomHeight, 80, 40);
 
           this.collection.push(randomObstacle);
 
         }
+
+
+
+
     }
 
-    movecollectionForever(){
-      this.collection.forEach((obstaclex)=>{
-          obstaclex.moveLeftForever();
-      });
+      movecollectionForever(){
+
+          setInterval(()=>{
+
+            this.collection.forEach(( obstaclex )=>{
+
+              obstaclex.ctx.clearRect(obstaclex.x, obstaclex.y, obstaclex.width, obstaclex.height);
+              obstaclex.x -= 0.3;
+              obstaclex.drawItself();
+
+          });
+          
+        },200);  // end of setinterval()
+        
     }
+
+
 
 } 
