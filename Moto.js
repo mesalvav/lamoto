@@ -8,6 +8,13 @@ class Moto {
   
   drawItself() {
     this.ctx.fillRect(this.x, this.y, this.width, this.height);
+
+      this.ctx.save();
+     this.ctx.fillStyle = "#AABBCC";
+     this.ctx.font = "16px Georgia";
+     this.ctx.fillText("P1", this.x + 1, this.y + 16);
+    this.ctx.restore();
+    // this.ctx.fillStyle = "#FFFFFF";
     // canvas 1000 x 600
   }
 
@@ -52,10 +59,10 @@ class Moto {
     // this.ctx.clearRect(this.x, this.y, this.width, this.height);
  
     if (keyState.ArrowUp && keyState.ArrowRight) {
-      this.x +=0.3;
+      this.x +=5;
       this.y -= 10;
     } else if (keyState.ArrowDown && keyState.ArrowRight ) {
-      this.x +=0.3;
+      this.x +=5;
       this.y += 10;
     }
      else if(keyState.ArrowUp){
@@ -65,7 +72,7 @@ class Moto {
      } else if (keyState.ArrowLeft){
        this.x -= 10;
      } else if (keyState.ArrowRight){
-        this.x +=0.6;
+        this.x +=5;
      }
  
      if(this.x > 970)
@@ -95,7 +102,14 @@ class Moto2 {
   }
 
   drawItself(){
+    // this.ctx.fillStyle = "#FFFFFF";
     this.ctx.fillRect(this.x, this.y, this.width, this.height);
+
+    this.ctx.save();
+     this.ctx.fillStyle = "#AABBCC";
+     this.ctx.font = "16px Georgia";
+     this.ctx.fillText("P2", this.x + 1, this.y + 16);
+    this.ctx.restore();
     // canvas 1000 x 600
   }
 
@@ -144,10 +158,10 @@ class Moto2 {
     // this.a = false; // left 
 
     if (keyState.w && keyState.s) {
-      this.x += 0.1;
+      this.x += 5;
       this.y -= 10;
     } else if (keyState.x && keyState.s ) {
-      this.x +=0.1;
+      this.x +=5;
       this.y += 10;
     }
      else if(keyState.w){
@@ -157,7 +171,7 @@ class Moto2 {
      } else if (keyState.a){
        this.x -= 10;
      } else if (keyState.s){
-        this.x +=0.6;
+        this.x +=5;
      }
  
      if(this.x > 970)
