@@ -15,7 +15,8 @@ class Chronos {
           } else if (this.counter < 4 && this.counter > 0) {
             $countdown.text(this.counter);
           } else if ( this.counter == 0 ){
-            $countdown.text("Go.....!")    
+            $countdown.text("Go.....!")  
+           
           } else {
             let negative = this.counter * -1;
             $countdown.text(negative)
@@ -27,7 +28,6 @@ class Chronos {
       
       setInterval(countFromFour, 1000);
     }
-
 
 
 } 

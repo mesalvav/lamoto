@@ -65,7 +65,7 @@ class Moto {
      } else if (keyState.ArrowLeft){
        this.x -= 10;
      } else if (keyState.ArrowRight){
-        this.x +=0.3;
+        this.x +=0.6;
      }
  
      if(this.x > 970)
@@ -157,7 +157,7 @@ class Moto2 {
      } else if (keyState.a){
        this.x -= 10;
      } else if (keyState.s){
-        this.x +=0.1;
+        this.x +=0.6;
      }
  
      if(this.x > 970)
