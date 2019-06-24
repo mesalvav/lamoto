@@ -7,6 +7,8 @@ class Obstacle{
     this.height = theHeight;
 
     this.ctx = ctx;
+
+    this.setItervalID = 0;
   }
 
   drawItself(){
@@ -21,6 +23,8 @@ class Obstacle{
     this.ctx.drawImage(obsImg, this.x, this.y, this.width, this.height);
   }
 
+  // not use when use collection 
+  /*
   moveLeftForever(){
       setInterval(()=>{
         this.ctx.clearRect(this.x, this.y, this.width, this.height);
@@ -28,5 +32,6 @@ class Obstacle{
         this.drawItself();
       },200)
   }
+  */
 }
 

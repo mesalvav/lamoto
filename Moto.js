@@ -34,16 +34,17 @@ class Moto {
     this.ctx.save();
     this.ctx.fillStyle = "#AABBCC";
     this.ctx.font = "18px Georgia";
-    this.ctx.fillText("P1", this.x + 1, this.y + 16);
+    this.ctx.fillText("P1", this.x + 1, this.y - 16);
     this.ctx.restore();
   }
-
+/*
   moveForeverXdirection() {
     setInterval(()=> {
+      
       this.x+=0.1;
     });
   }
-
+*/
   moveYourSelf(event) {
    // this.ctx.clearRect(this.x, this.y, this.width, this.height);
 
@@ -139,24 +140,24 @@ class Moto2 {
     this.ctx.save();
     this.ctx.fillStyle = "#AABBCC";
      this.ctx.font = "18px Georgia";
-     this.ctx.fillText("P2", this.x + 1, this.y + 16);
+     this.ctx.fillText("P2", this.x + 1, this.y - 16);
      this.ctx.restore();
   }
   drawImage() {
     // ctx.drawImage(whichImage, x, y, width, height);
       this.ctx.drawImage(this.Player2Img, this.x, this.y, this.width, this.height);
    }
-
+/*
   moveForeverXdirection() {
     setInterval(()=> {
       this.x+=0.1;
     });
   }
-  
+  */
   moveYourSelf(event) {
     // this.ctx.clearRect(this.x, this.y, this.width, this.height);
     
-    // console.log("dentro moto22" + whichDirection);
+  
     let whichDirection = event.key;
 
     if(whichDirection === "w"){

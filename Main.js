@@ -12,20 +12,20 @@ let dDocument  = $(document).ready(function(){
   let crono = new Chronos();
   let moto1 = new Moto(ctx, 150);
   let moto2 = new Moto2(ctx, 450);
+    moto1.drawLabel();
+    moto2.drawLabel();
 
   moto1.Player1Img.onload = () => {
     
-    // console.log("loading image p1...... !!!");
+    
     moto1.drawItself();
     
   };
- //  moto1.drawItself();
+ 
   moto2.Player2Img.onload = () => {
-  console.log("loading image P2...... !!!");
-  moto2.drawItself();
-};
-
-  moto2.drawItself();
+   
+    moto2.drawItself();
+  };
   
   let finishLine = new FinishLine(ctx);
   finishLine.drawItself();
@@ -44,12 +44,12 @@ let startButton = $('#start-button').click(function(){
     location.reload();
   } else {
     crono.startTheCrono();
-
+    startButton.text('Reset Game');
     let startGameWithDelay = () => {
 
       startButton.text('Reset Game');
-      moto2.moveForeverXdirection();
-      moto1.moveForeverXdirection();
+      // moto2.moveForeverXdirection();
+      // moto1.moveForeverXdirection();
       animate();
       randomObstacles.movecollectionForever();
     }
@@ -72,16 +72,13 @@ $(document).keydown(function(e){
     moto1.moveYourSelfWithState(stateKeyboard);
     moto2.moveYourSelfWithState(stateKeyboard);
 
-    // console.log("from down " + JSON.stringify( stateKeyboard));
 
   }); // end of keydown 
 
   $(document).keyup(function(e){
     
-    // console.log("key code up " + e.key);
     stateKeyboard.updateStateKeyUp(e);
-    // console.log("from up " + JSON.stringify( stateKeyboard));
-    
+   
 
   }); // end of keydown 
 
@@ -124,11 +121,11 @@ $(document).keydown(function(e){
     }
 
     let afterCollisionEffectPlayers = function(obj1, obj2) {
-      obj1.x = obj1.x - 3;
-      obj1.y = obj1.y - 10;
+      obj1.x = obj1.x - 6;
+      obj1.y = obj1.y - 15;
 
-      obj2.x = obj2.x - 3;
-      obj2.y = obj2.y + 10;
+      obj2.x = obj2.x - 6;
+      obj2.y = obj2.y + 15;
     }
 
     let afterCollisionEffectObstacles = function(obj1, obj2) {
@@ -140,10 +137,10 @@ $(document).keydown(function(e){
       obj2.y = obj2.y + 3;
     }
 
-    console.log("players collision detected " + collided(moto1, moto2) );
+  
     if (collided(moto1, moto2)) {
       afterCollisionEffectPlayers(moto1, moto2);
-        
+      console.log("players collision detected ");
     }
     // collision with obstacles player1
     // if (collided(moto1, obstacle)) {
@@ -162,11 +159,13 @@ $(document).keydown(function(e){
           // collision with obstacles player1
           if (collided(moto1, obstaclex)) {
               afterCollisionEffectObstacles(moto1, obstaclex);
+            console.log("player1 obstacle collision detected ");
 
           }
           // collision with obstacles player1
           if (collided(moto2, obstaclex)) {
             afterCollisionEffectObstacles(moto2, obstaclex);
+            console.log("player2 obstacle collision detected ");
 
           }
 
