@@ -2,20 +2,33 @@ class Moto {
 
   constructor(ctx, posY) {
     this.ctx = ctx
-    this.x=30;  this.y=posY;  this.width=30; this.height=30;
+    this.x=30;  this.y=posY;  this.width=60; this.height=60;
+    this.drawImage();  
 
   } // end of constructor 
   
   drawItself() {
-    this.ctx.fillRect(this.x, this.y, this.width, this.height);
+      this.ctx.fillRect(this.x, this.y, this.width, this.height);
 
       this.ctx.save();
+
+      this.drawImage();  
      this.ctx.fillStyle = "#AABBCC";
-     this.ctx.font = "16px Georgia";
+     this.ctx.font = "18px Georgia";
      this.ctx.fillText("P1", this.x + 1, this.y + 16);
     this.ctx.restore();
     // this.ctx.fillStyle = "#FFFFFF";
     // canvas 1000 x 600
+  }
+
+  drawImage( ) {
+    let Player1Img = new Image();
+
+    // "src" has to point as the image is used in HTML file
+    Player1Img.src = "yellowBal.png";
+    // ctx.drawImage(whichImage, x, y, width, height);
+    this.ctx.drawImage(Player1Img, this.x, this.y, this.width, this.height);
+
   }
 
   moveForeverXdirection() {
@@ -98,7 +111,7 @@ class Moto {
 class Moto2 {
   constructor(ctx, posY){
     this.ctx = ctx
-    this.x=30;  this.y=posY;  this.width=30; this.height=30;
+    this.x=30;  this.y=posY;  this.width=60; this.height=60;
   }
 
   drawItself(){
@@ -106,8 +119,16 @@ class Moto2 {
     this.ctx.fillRect(this.x, this.y, this.width, this.height);
 
     this.ctx.save();
+
+    let Player2Img = new Image();
+
+    // "src" has to point as the image is used in HTML file
+    Player2Img.src = "multiBal.png";
+    // ctx.drawImage(whichImage, x, y, width, height);
+    this.ctx.drawImage(Player2Img, this.x, this.y, this.width, this.height);
+
      this.ctx.fillStyle = "#AABBCC";
-     this.ctx.font = "16px Georgia";
+     this.ctx.font = "18px Georgia";
      this.ctx.fillText("P2", this.x + 1, this.y + 16);
     this.ctx.restore();
     // canvas 1000 x 600

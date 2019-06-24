@@ -15,11 +15,24 @@ class ObstacleCollection {
     }
 
     randomCollection(){
-        let numberOfObstacles = 5;
+        let numberOfObstacles = 4;
         for(let i=0; i< numberOfObstacles; i++) {
 
           let randomHeight = Math.floor(Math.random()* 570) + 20;
            let randomWidth = 1000 + (Math.floor(Math.random()* 500));
+
+
+          let randomObstacle = new Obstacle(this.ctx,randomWidth, randomHeight, 80, 40);
+
+          this.collection.push(randomObstacle);
+
+        }
+
+
+        for(let i=0; i< numberOfObstacles; i++) {
+
+          let randomHeight = Math.floor(Math.random()* 570) + 20;
+           let randomWidth = 1000 + (Math.floor(Math.random()* 2000));
 
 
           let randomObstacle = new Obstacle(this.ctx,randomWidth, randomHeight, 40, 40);
@@ -27,7 +40,6 @@ class ObstacleCollection {
           this.collection.push(randomObstacle);
 
         }
-          
     }
 
     movecollectionForever(){

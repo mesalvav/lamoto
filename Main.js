@@ -3,21 +3,24 @@
 let dDocument  = $(document).ready(function(){
   console.log("hi ");
   
-let ctx = $("#dcanvas")[0].getContext('2d');
-ctx.save();
 
-let stateKeyboard = new StateKeyboard();
+   let ctx = $("#dcanvas")[0].getContext('2d');
+    ctx.save();
 
-let crono = new Chronos();
-let moto1 = new Moto(ctx, 150);
-let moto2 = new Moto2(ctx, 450);
-moto1.drawItself();
-moto2.drawItself();
+  let stateKeyboard = new StateKeyboard();
 
-let finishLine = new FinishLine(ctx);
-finishLine.drawItself();
+  let crono = new Chronos();
+  let moto1 = new Moto(ctx, 150);
+  let moto2 = new Moto2(ctx, 450);
 
-let obstacle = new Obstacle(ctx, 900, 300, 50 ,50);
+  moto1.drawItself();
+  moto2.drawItself();
+  
+
+  let finishLine = new FinishLine(ctx);
+  finishLine.drawItself();
+
+// let obstacle = new Obstacle(ctx, 900, 300, 50 ,50);
  let randomObstacles = new ObstacleCollection(ctx);
 
  randomObstacles.randomCollection();
@@ -92,7 +95,7 @@ $(document).keydown(function(e){
     finishLine.drawItself();
     detectWinner(moto1, moto2);
 
-    obstacle.moveLeftForever();
+    // obstacle.moveLeftForever();
 
     randomObstacles.collection.forEach((obstaclex) => {
       obstaclex.moveLeftForever();
@@ -132,16 +135,16 @@ $(document).keydown(function(e){
         
     }
     // collision with obstacles player1
-    if (collided(moto1, obstacle)) {
-      afterCollisionEffectObstacles(moto1, obstacle);
+    // if (collided(moto1, obstacle)) {
+    //   afterCollisionEffectObstacles(moto1, obstacle);
 
-    }
+    // }
 
     // collision with obstacles player1
-     if (collided(moto2, obstacle)) {
-      afterCollisionEffectObstacles(moto2, obstacle);
+    //  if (collided(moto2, obstacle)) {
+    //   afterCollisionEffectObstacles(moto2, obstacle);
 
-    }
+    // }
 
     randomObstacles.collection.forEach( (obstaclex) => {
 

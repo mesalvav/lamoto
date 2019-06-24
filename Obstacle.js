@@ -11,7 +11,14 @@ class Obstacle{
 
   drawItself(){
     // this.ctx.fillStyle = "#FFFFFF";
-    this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    // this.ctx.fillRect(this.x, this.y, this.width, this.height);
+
+    let obsImg = new Image();
+
+    // "src" has to point as the image is used in HTML file
+    obsImg.src = "helipolice.png";
+    // ctx.drawImage(whichImage, x, y, width, height);
+    this.ctx.drawImage(obsImg, this.x, this.y, this.width, this.height);
   }
 
   moveLeftForever(){
