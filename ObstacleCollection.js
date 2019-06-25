@@ -41,17 +41,17 @@ class ObstacleCollection {
 
         }
 
-        for(let i=0; i< numberOfObstacles; i++) {
+        // for(let i=0; i< numberOfObstacles; i++) {
 
-          let randomHeight = Math.floor(Math.random()* 570) + 20;
-           let randomWidth = 1000 + (Math.floor(Math.random()* 4000));
+        //   let randomHeight = Math.floor(Math.random()* 570) + 20;
+        //    let randomWidth = 1000 + (Math.floor(Math.random()* 4000));
 
 
-          let randomObstacle = new Obstacle(this.ctx,randomWidth, randomHeight, 80, 40);
+        //   let randomObstacle = new Obstacle(this.ctx,randomWidth, randomHeight, 80, 40);
 
-          this.collection.push(randomObstacle);
+        //   this.collection.push(randomObstacle);
 
-        }
+        // }
 
         
 

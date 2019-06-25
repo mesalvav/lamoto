@@ -80,7 +80,7 @@ $(document).keydown(function(e){
     stateKeyboard.updateStateKeyUp(e);
    
 
-  }); // end of keydown 
+  }); // end of keyup
 
 
 

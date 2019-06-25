@@ -86,6 +86,15 @@ class Moto {
       this.x +=5;
       this.y += 10;
     }
+
+    else if (keyState.ArrowDown && keyState.ArrowLeft ) {
+      this.x -=5;
+      this.y += 10;
+    } else if (keyState.ArrowUp && keyState.ArrowLeft) {
+      this.x -=5;
+      this.y -= 10;
+    }
+
      else if(keyState.ArrowUp){
        this.y -= 10;
      } else if (keyState.ArrowDown){
@@ -199,6 +208,15 @@ class Moto2 {
       this.x +=5;
       this.y += 10;
     }
+
+    else if (keyState.x && keyState.a ) {
+      this.x -=5;
+      this.y += 10;
+    } else if (keyState.w && keyState.a) {
+      this.x -=5;
+      this.y -= 10;
+    }
+
      else if(keyState.w){
        this.y -= 10;
      } else if (keyState.x){
