@@ -83,19 +83,23 @@ $(document).keydown(function(e){
   }); // end of keyup
 
 
-
+  let frame = 1;
   function animate() {
-    
+    frame++;
   console.log("animate ... ");
-  setInterval(()=>{
+  // setInterval(()=>{
 
     ctx.clearRect(0,0,1000,600);
     
     drawEverything();
+
     detectCollisions(moto1, moto2, randomObstacles);
-  }, 50);
+
+      requestAnimationFrame(animate);
+  // }, 50);
 
   }// end of animate func 
+
 
   function drawEverything() {
     moto1.drawItself();
@@ -103,7 +107,10 @@ $(document).keydown(function(e){
     finishLine.drawItself();
     detectWinner(moto1, moto2);
 
-     randomObstacles.movecollectionForever();
+     
+    randomObstacles.drawCollection();
+    
+    randomObstacles.movecollectionForever();
 
     // randomObstacles.collection.forEach((obstaclex) => {
     //   obstaclex.moveLeftForever();

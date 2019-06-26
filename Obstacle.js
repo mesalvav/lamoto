@@ -7,7 +7,7 @@ class Obstacle{
     this.height = theHeight;
 
     this.ctx = ctx;
-
+    
     this.setItervalID = 0;
   }
 
@@ -20,7 +20,10 @@ class Obstacle{
     // "src" has to point as the image is used in HTML file
     obsImg.src = "helipolice.png";
     // ctx.drawImage(whichImage, x, y, width, height);
-    this.ctx.drawImage(obsImg, this.x, this.y, this.width, this.height);
+    if ( this.x > 0 && this.x <1000){
+      this.ctx.drawImage(obsImg, this.x, this.y, this.width, this.height);
+
+    }
   }
 
   // not use when use collection 

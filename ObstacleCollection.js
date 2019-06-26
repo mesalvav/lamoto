@@ -15,7 +15,7 @@ class ObstacleCollection {
     }
 
     randomCollection(){
-        let numberOfObstacles = 7;
+        let numberOfObstacles = 3;
         for(let i=0; i< numberOfObstacles; i++) {
 
           let randomHeight = Math.floor(Math.random()* 570) + 20;
@@ -28,7 +28,7 @@ class ObstacleCollection {
 
         }
 
-
+        numberOfObstacles = 2*numberOfObstacles 
         for(let i=0; i< numberOfObstacles; i++) {
 
           let randomHeight = Math.floor(Math.random()* 570) + 20;
@@ -41,19 +41,41 @@ class ObstacleCollection {
 
         }
 
-        // for(let i=0; i< numberOfObstacles; i++) {
+        for(let i=0; i< numberOfObstacles; i++) {
 
-        //   let randomHeight = Math.floor(Math.random()* 570) + 20;
-        //    let randomWidth = 1000 + (Math.floor(Math.random()* 4000));
+          let randomHeight = Math.floor(Math.random()* 570) + 20;
+           let randomWidth = 1000 + (Math.floor(Math.random()* 4000));
 
 
-        //   let randomObstacle = new Obstacle(this.ctx,randomWidth, randomHeight, 80, 40);
+          let randomObstacle = new Obstacle(this.ctx,randomWidth, randomHeight, 80, 40);
 
-        //   this.collection.push(randomObstacle);
+          this.collection.push(randomObstacle);
 
-        // }
+        }
+        numberOfObstacles = numberOfObstacles + 4;
+        for(let i=0; i< numberOfObstacles; i++) {
 
-        
+          let randomHeight = Math.floor(Math.random()* 570) + 20;
+           let randomWidth = 1000 + (Math.floor(Math.random()* 6000));
+
+
+          let randomObstacle = new Obstacle(this.ctx,randomWidth, randomHeight, 80, 40);
+
+          this.collection.push(randomObstacle);
+
+        }
+
+        for(let i=0; i< numberOfObstacles; i++) {
+
+          let randomHeight = Math.floor(Math.random()* 570) + 20;
+           let randomWidth = 1000 + (Math.floor(Math.random()* 8000));
+
+
+          let randomObstacle = new Obstacle(this.ctx,randomWidth, randomHeight, 80, 40);
+
+          this.collection.push(randomObstacle);
+
+        }
 
     }
 
@@ -70,9 +92,9 @@ class ObstacleCollection {
 
             this.collection.forEach(( obstaclex )=>{
 
-              obstaclex.ctx.clearRect(obstaclex.x, obstaclex.y, obstaclex.width, obstaclex.height);
-              obstaclex.x -= 0.3;
-              obstaclex.drawItself();
+              // obstaclex.ctx.clearRect(obstaclex.x, obstaclex.y, obstaclex.width, obstaclex.height);
+              obstaclex.x -= 0.1;
+              // obstaclex.drawItself();
 
           });
           
